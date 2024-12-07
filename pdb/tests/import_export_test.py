@@ -5,7 +5,7 @@ from pdb.database.datatypes.datatype_converter_factory import DatatypeConverterF
 from pdb.database.datatypes.datatypes import PdbDatatype
 from pdb.database.sql.sql_collection import SqlCollection
 from pdb.database.sql.sql_factory import SqlFactory
-from pdb.db_manager.db_manager2 import DbManager2
+from pdb.db_manager.db_manager import DbManager
 from pdb.shared.hash.algorithms import Sha256
 from pdb.shared.salt.random_salter import RandomSalter
 from pdb.tools.exporters.csv_exporter import CsvExporter
@@ -29,7 +29,7 @@ class ImportExportTester:
             SqlFactory.create_drop_generator(dbtype),
             SqlFactory.create_alter_generator(dbtype),
         )
-        self._man = DbManager2(db, sql, hasher, salter)
+        self._man = DbManager(db, sql, hasher, salter)
         self._test_cols: list[tuple[str, PdbDatatype, bool]] = [
             ("ReleaseDate", PdbDatatype.DATE, False),
             ("Band", PdbDatatype.TEXT, False),
