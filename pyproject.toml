@@ -1,0 +1,47 @@
+[project]
+name = "pdb"
+description = "Personal Database Manager"
+version = "0.0.1"
+requires-python = ">3.12"
+
+authors = [
+    { name = "Zewzki", email = "zewzkijunk@gmail.com" }
+]
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+ignore = [
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D205",
+    "D212",
+    "D400",
+    "D415",
+    "E402",
+    "TRY003",
+    "TD003",
+    "FIX002",
+    "ANN101",
+    "TRY002",
+    "N805",
+    "E701",
+    "B006",
+    "E741",
+    "E712",
+    "INP001" # implicit namespace package
+]
