@@ -1,5 +1,5 @@
 from pathlib import Path
-from pdb.client.rendering.renderer import Renderer
+from pdb.app.client.rendering.renderer import Renderer
 from typing import Any
 
 from jinja2 import Environment

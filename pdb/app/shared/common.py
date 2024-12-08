@@ -1,4 +1,4 @@
-from pdb.api.shared.constants import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_TYPE, DB_USER, HASH_TYPE, SALT_TYPE
+from pdb.app.shared.constants import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_TYPE, DB_USER, HASH_TYPE, SALT_TYPE
 from pdb.database.config.db_config import DbConfig
 from pdb.database.connectors.connector_factory import ConnectorFactory
 from pdb.database.datatypes.datatype_converter_factory import DatatypeConverterFactory

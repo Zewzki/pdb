@@ -1,5 +1,5 @@
-from pdb.tests.sqlite3_manager_test import Sqlite3ManagerTester
 from pdb.tests.import_export_test import ImportExportTester
+from pdb.tests.sqlite3_manager_test import Sqlite3ManagerTester
 
 
 def sqlite3_test() -> None:
@@ -17,5 +17,5 @@ def import_test() -> None:
 
 
 if __name__ == "__main__":
-    # sqlite3_test()
-    import_test()
+    sqlite3_test()
+    #import_test()

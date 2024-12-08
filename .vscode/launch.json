@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Test",
+            "program": "${workspaceFolder}/test.py",
+            "request": "launch",
+            "type": "debugpy",
+            "envFile": "${workspaceFolder}/dev.env"
+        }
+    ]
+}

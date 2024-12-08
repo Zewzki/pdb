@@ -17,7 +17,7 @@ class Sqlite3ManagerTester:
         hasher = Sha256()
         salter = RandomSalter()
         dbtype = SupportedDb.SQLITE3
-        db_config = DbConfig(host="/home/zewzki/Projects/pdb/pdb/tests/db/pdb.sqlite3", debug=True)
+        db_config = DbConfig(host="./pdb/tests/db/pdb.sqlite3", debug=True)
         db = ConnectorFactory.create_connector(dbtype, db_config)
         sql = SqlCollection(
             DatatypeConverterFactory.create_datatype_converter(dbtype),

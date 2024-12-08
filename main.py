@@ -1,4 +1,4 @@
-from pdb.client.pdb_client import PdbClient
+from pdb.app.client.pdb_client import PdbClient
 
 pdb = PdbClient()
 
