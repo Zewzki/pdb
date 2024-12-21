@@ -13,6 +13,14 @@ class DbConnector(ABC):
         pass
 
     @abstractmethod
+    def batch_write(self, sql: str, params: list[list[Any]]):
+        pass
+
+    @abstractmethod
+    def write_script(self, script: str):
+        pass
+
+    @abstractmethod
     def commit(self) -> None:
         pass
 

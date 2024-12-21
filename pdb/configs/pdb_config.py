@@ -1,7 +1,7 @@
 from pathlib import Path
 
-class PdbConfig:
 
+class PdbConfig:
     def __init__(self, path: Path) -> None:
         self._path = path
         self.pdbs: list[str] = []

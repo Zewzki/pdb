@@ -9,7 +9,7 @@ class StandardAlterGenerator(AlterGenerator):
         self._conv = dtype_converter
 
     def generate_rename_table(self, old_tablename: str, new_tablename: str) -> tuple[str, list[Any]]:
-        sql = f"ALTER TABLE {old_tablename} TO {new_tablename};"
+        sql = f"ALTER TABLE {old_tablename} RENAME TO {new_tablename};"
         return (sql, [])
 
     def generate_add_column(self, tablename: str, new_col_name: str, dtype: PdbDatatype) -> tuple[str, list[Any]]:

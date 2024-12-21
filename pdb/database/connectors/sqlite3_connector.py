@@ -48,6 +48,36 @@ class Sqlite3Connector(DbConnector):
             if cursor is not None:
                 cursor.close()
 
+    def batch_write(self, sql: str, params: list[list[Any]]):
+        try:
+            cursor = self._cnx.cursor()
+            if self.debug:
+                print(f"{sql} - {params}")
+            cursor.executemany(sql, params)
+            self._cnx.commit()
+        except Exception as e:
+            if cursor is not None:
+                self._cnx.rollback()
+                raise e
+        finally:
+            if cursor is not None:
+                cursor.close()
+
+    def write_script(self, script):
+        try:
+            cursor = self._cnx.cursor()
+            if self.debug:
+                print(script)
+            cursor.executescript(script)
+            self._cnx.commit()
+        except Exception as e:
+            if cursor is not None:
+                self._cnx.rollback()
+                raise e
+        finally:
+            if cursor is not None:
+                cursor.close()
+
     def commit(self) -> None:
         self._cnx.commit()
 

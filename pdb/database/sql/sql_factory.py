@@ -16,6 +16,8 @@ from pdb.database.sql.query.query_generator import QueryGenerator
 from pdb.database.sql.query.sqlite3_query_generator import Sqlite3QueryGenerator
 from pdb.database.sql.update.standard_update_generator import StandardUpdateGenerator
 from pdb.database.sql.update.update_generator import UpdateGenerator
+from pdb.database.sql.script.script_generator import ScriptGenerator
+from pdb.database.sql.script.standard_script_generator import StandardScriptGenerator
 
 
 class SqlFactory:
@@ -66,3 +68,9 @@ class SqlFactory:
         match dbtype:
             case SupportedDb.SQLITE3:
                 return StandardAlterGenerator(Sqlite3DatatypeConverter())
+
+    @classmethod
+    def create_script_generator(cls, dbtype: SupportedDb, query_placeholder: QueryPlaceholder) -> ScriptGenerator:
+        match dbtype:
+            case SupportedDb.SQLITE3:
+                return StandardScriptGenerator(query_placeholder)

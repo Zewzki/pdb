@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "name": "PDB",
+            "program": "${workspaceFolder}/main.py",
+            "request": "launch",
+            "type": "debugpy",
+            "envFile": "${workspaceFolder}/dev.env",
+        },
+        {
             "name": "Test",
             "program": "${workspaceFolder}/test.py",
             "request": "launch",

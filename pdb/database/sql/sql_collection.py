@@ -6,6 +6,7 @@ from pdb.database.sql.drop.drop_generator import DropGenerator
 from pdb.database.sql.insert.insert_generator import InsertGenerator
 from pdb.database.sql.query.query_generator import QueryGenerator
 from pdb.database.sql.update.update_generator import UpdateGenerator
+from pdb.database.sql.script.script_generator import ScriptGenerator
 
 
 class SqlCollection:
@@ -19,6 +20,7 @@ class SqlCollection:
         delete_generator: DeleteGenerator,
         drop_generator: DropGenerator,
         alter_generator: AlterGenerator,
+        script_generator: ScriptGenerator,
     ) -> None:
         self._conv = dtype_converter
         self._cg = create_generator
@@ -28,6 +30,7 @@ class SqlCollection:
         self._dg = delete_generator
         self._drop_g = drop_generator
         self._ag = alter_generator
+        self._sg = script_generator
 
     @property
     def dtype_converter(self) -> DatatypeConverter:
@@ -60,3 +63,7 @@ class SqlCollection:
     @property
     def alter_generator(self) -> AlterGenerator:
         return self._ag
+
+    @property
+    def script_generator(self) -> ScriptGenerator:
+        return self._sg

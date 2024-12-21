@@ -13,7 +13,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [tool.ruff]
-line-length = 120
+line-length = 160
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -43,5 +43,7 @@ ignore = [
     "B006",
     "E741",
     "E712",
-    "INP001" # implicit namespace package
+    "INP001", # implicit namespace package
+    "S608", # Possible SQL injection vector through string-based query construction
+    "FBT003", # Boolean positional value in function call
 ]

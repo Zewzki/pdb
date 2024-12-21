@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-from pdb.database.datatypes.datatypes import PdbDatatype
+from pdb.database.models.pdb_column import PdbColumn
 from typing import Any
 
 
 class CreateGenerator(ABC):
     @abstractmethod
-    def generate_create(self, table: str, columns: list[tuple[str, PdbDatatype, bool]]) -> tuple[str, list[Any]]:
+    def generate_create(self, table: str, columns: list[PdbColumn]) -> tuple[str, list[Any]]:
         pass

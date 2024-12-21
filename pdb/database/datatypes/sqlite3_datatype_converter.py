@@ -10,7 +10,7 @@ class Sqlite3DatatypeConverter(DatatypeConverter):
             case PdbDatatype.CHARACTER:
                 return Sqlite3Datatype.TEXT
             case PdbDatatype.BOOL:
-                return Sqlite3Datatype.TEXT
+                return Sqlite3Datatype.INTEGER
             case PdbDatatype.NUMBER:
                 return Sqlite3Datatype.INTEGER
             case PdbDatatype.DECIMAL:

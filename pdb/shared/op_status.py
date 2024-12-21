@@ -1,7 +1,8 @@
 from dataclasses import dataclass
+from typing import Any
 
 
 @dataclass
 class OpStatus:
     status: bool
-    msg: str
+    content: Any
